@@ -9,12 +9,8 @@ class List extends React.Component {
                 
                 {
                     this.props.list.map((item) => {
-                        return (
-                            <div> 
-                                <Item item={item} key={item.id}/>
-                                <hr/>
-                            </div>
-                        );
+                        return (<Item item={item} key={item.id} />
+						);
                     })
                 }
             </div>

@@ -1,15 +1,29 @@
-import React from 'react';
+import React from "react";
 
 class Item extends React.Component {
-    render(){
-        return(
-            <div>
-            <div>Artist: {this.props.item.artist}</div>
-            <div>Album: {this.props.item.album}</div>
-            <div>Title: {this.props.item.title}</div>
-            </div>
-        );
-    }
+  render() {
+    var item = this.props.item;
+
+    return (
+      <div className="item">
+        <div className="left">
+          <iframe
+            src={"https://open.spotify.com/embed/track/" + item.id}
+            width="80"
+            height="80"
+            frameBorder="0"
+            allowtransparency="true"
+            allow="encrypted-media"
+          />
+        </div>
+        <div className="right">
+          <div className="title">{item.title}</div>
+          <div className="artist">{item.artist}</div>
+          <div className="album">{item.album}</div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Item;
